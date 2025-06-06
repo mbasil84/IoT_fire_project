@@ -1,0 +1,716 @@
+[
+    {
+        "id": "f6f2187d.f17ca8",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "f330a44b089d8beb",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "192.168.1.51",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "e698b85c5f9d27b4",
+        "type": "ui_group",
+        "name": "Αισθητήρες",
+        "tab": "",
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "81fdc5571c54918f",
+        "type": "ui_tab",
+        "name": "Dashboard",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "4f575e474374bd4d",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-dark",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "Arial,Arial,Helvetica,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#097479",
+                    "value": "#097479",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#097479",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#0eb8c0",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#555555",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#eeeeee",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#097479",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "Arial,Arial,Helvetica,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "cc66731f42ebb8df",
+        "type": "ui_group",
+        "name": "Αισθητήρες",
+        "tab": "81fdc5571c54918f",
+        "order": 1,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "bda5604fda94d68c",
+        "type": "ui_group",
+        "name": "Γραφήματα",
+        "tab": "81fdc5571c54918f",
+        "order": 2,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "fa6d7947d06d1889",
+        "type": "ui_spacer",
+        "z": "f6f2187d.f17ca8",
+        "name": "spacer",
+        "group": "bda5604fda94d68c",
+        "order": 3,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "7b40ba3069a27119",
+        "type": "mqtt in",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "topic": "fire_status",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "f330a44b089d8beb",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 140,
+        "y": 280,
+        "wires": [
+            [
+                "ed6c91869edc1272",
+                "7a123456abcde789",
+                "7b123456abcde888",
+                "tempFunc1",
+                "humidFunc1",
+                "thermostatLogic",
+                "emojiSmokeFunc"
+            ]
+        ]
+    },
+    {
+        "id": "ed6c91869edc1272",
+        "type": "json",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "property": "payload",
+        "action": "obj",
+        "pretty": false,
+        "x": 310,
+        "y": 80,
+        "wires": [
+            [
+                "1ecace842eaaa58e",
+                "a7a1f61c265d4cda"
+            ]
+        ]
+    },
+    {
+        "id": "1ecace842eaaa58e",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "Θερμοκρασία → led color",
+        "func": "let temp = msg.payload.temperature;\nlet smoke = msg.payload.smoke;\nlet led = \"\";\n\nif (smoke) {\n    led = \"red\";  // Αν υπάρχει καπνός, ανάβει κόκκινο ανεξαρτήτως θερμοκρασίας\n} else if (temp < 20) {\n    led = \"blue\";\n} else if (temp < 25) {\n    led = \"green\";\n} else if (temp < 30) {\n    led = \"yellow\";\n} else {\n    led = \"red\";\n}\n\nmsg.payload = { led: led };\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 570,
+        "y": 20,
+        "wires": [
+            [
+                "5f5199d05a8b8556",
+                "ledColorDisplayFunc"
+            ]
+        ]
+    },
+    {
+        "id": "5f5199d05a8b8556",
+        "type": "mqtt out",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "topic": "led_control",
+        "qos": "0",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "f330a44b089d8beb",
+        "x": 1090,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "a7a1f61c265d4cda",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "Καπνός → buzzer activation",
+        "func": "let smoke = msg.payload.smoke;\n\nmsg.payload = { buzzer: smoke };  // true αν smoke==true\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 580,
+        "y": 80,
+        "wires": [
+            [
+                "b33c368153d4350c"
+            ]
+        ]
+    },
+    {
+        "id": "b33c368153d4350c",
+        "type": "mqtt out",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "topic": "buzzer_control",
+        "qos": "0",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "f330a44b089d8beb",
+        "x": 1100,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "7a123456abcde789",
+        "type": "ui_gauge",
+        "z": "f6f2187d.f17ca8",
+        "name": "Θερμοκρασία",
+        "group": "cc66731f42ebb8df",
+        "order": 1,
+        "width": 6,
+        "height": "5",
+        "gtype": "gage",
+        "title": "Θερμοκρασία",
+        "label": "°C",
+        "format": "{{msg.payload.temperature}}",
+        "min": 0,
+        "max": 50,
+        "colors": [
+            "#0000ff",
+            "#00ff00",
+            "#ffff00"
+        ],
+        "seg1": 20,
+        "seg2": 25,
+        "diff": false,
+        "className": "",
+        "x": 860,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "7b123456abcde888",
+        "type": "ui_gauge",
+        "z": "f6f2187d.f17ca8",
+        "name": "Υγρασία",
+        "group": "cc66731f42ebb8df",
+        "order": 2,
+        "width": 6,
+        "height": "5",
+        "gtype": "gage",
+        "title": "Υγρασία",
+        "label": "%",
+        "format": "{{msg.payload.humidity}}",
+        "min": 0,
+        "max": 100,
+        "colors": [
+            "#00bfff",
+            "#00ff00",
+            "#ffa500"
+        ],
+        "seg1": 30,
+        "seg2": 60,
+        "diff": false,
+        "className": "",
+        "x": 840,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "tempFunc1",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "Λήψη Θερμοκρασίας",
+        "func": "msg.payload = msg.payload.temperature;\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 540,
+        "y": 420,
+        "wires": [
+            [
+                "tempChart"
+            ]
+        ]
+    },
+    {
+        "id": "humidFunc1",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "Λήψη Υγρασίας",
+        "func": "msg.payload = msg.payload.humidity;\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 520,
+        "y": 460,
+        "wires": [
+            [
+                "humidChart"
+            ]
+        ]
+    },
+    {
+        "id": "tempChart",
+        "type": "ui_chart",
+        "z": "f6f2187d.f17ca8",
+        "name": "Θερμοκρασία",
+        "group": "bda5604fda94d68c",
+        "order": 1,
+        "width": 6,
+        "height": "5",
+        "label": "Θερμοκρασία (°C)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "15",
+        "ymax": "35",
+        "removeOlder": "20",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#ff9900",
+            "#66cc00",
+            "#3399ff",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 820,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "humidChart",
+        "type": "ui_chart",
+        "z": "f6f2187d.f17ca8",
+        "name": "Υγρασία",
+        "group": "bda5604fda94d68c",
+        "order": 2,
+        "width": 6,
+        "height": "5",
+        "label": "Υγρασία (%)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": 0,
+        "ymax": 100,
+        "removeOlder": "20",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#3399ff",
+            "#33cc33",
+            "#cccc00",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000",
+            "#000000"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 800,
+        "y": 460,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "thermostatLogic",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "Θερμοστάτης Λογική",
+        "func": "// Αν είναι επιθυμητή θερμοκρασία → αποθήκευση\nif (msg.topic === \"desired_temperature\") {\n    flow.set(\"target_temp\", msg.payload);\n    return null;\n}\n\n// Αν είναι θερμοκρασία περιβάλλοντος\nif (msg.topic === \"fire_status\") {\n    let current = msg.payload.temperature;\n    let target = flow.get(\"target_temp\") || 22;\n\n    msg.payload = { heating: current < target };\n    return msg;\n}\n\nreturn null;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 540,
+        "y": 500,
+        "wires": [
+            [
+                "mqttHeatingOut",
+                "emojiHeatingFunc"
+            ]
+        ]
+    },
+    {
+        "id": "mqttHeatingOut",
+        "type": "mqtt out",
+        "z": "f6f2187d.f17ca8",
+        "name": "heating_control",
+        "topic": "heating_control",
+        "qos": "0",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "f330a44b089d8beb",
+        "x": 1100,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "desiredTempSlider",
+        "type": "ui_slider",
+        "z": "f6f2187d.f17ca8",
+        "name": "Επιθυμητή Θερμοκρασία",
+        "label": "Επιλογή Θερμοκρασίας",
+        "tooltip": "",
+        "group": "bda5604fda94d68c",
+        "order": 4,
+        "width": "6",
+        "height": 1,
+        "passthru": true,
+        "outs": "all",
+        "topic": "desired_temperature",
+        "topicType": "str",
+        "min": "18",
+        "max": 30,
+        "step": "0.2",
+        "className": "",
+        "x": 270,
+        "y": 560,
+        "wires": [
+            [
+                "desiredTempDisplay",
+                "thermostatLogic"
+            ]
+        ]
+    },
+    {
+        "id": "desiredTempDisplay",
+        "type": "ui_text",
+        "z": "f6f2187d.f17ca8",
+        "group": "bda5604fda94d68c",
+        "order": 5,
+        "width": "6",
+        "height": 1,
+        "name": "Εμφάνιση Επιθυμητής",
+        "label": "Επιθυμητή",
+        "format": "{{msg.payload}} °C",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 840,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "ledColorDisplayFunc",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "Χρώμα LED (payload.led)",
+        "func": "msg.payload = msg.payload.led;\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 890,
+        "y": 240,
+        "wires": [
+            [
+                "uiColorLed"
+            ]
+        ]
+    },
+    {
+        "id": "uiColorLed",
+        "type": "ui_led",
+        "z": "f6f2187d.f17ca8",
+        "order": 3,
+        "group": "cc66731f42ebb8df",
+        "width": "5",
+        "height": "1",
+        "label": "Ενεργό λαμπάκι LED",
+        "labelPlacement": "left",
+        "labelAlignment": "right",
+        "colorForValue": [
+            {
+                "color": "#ff0000",
+                "value": "red",
+                "valueType": "str"
+            },
+            {
+                "color": "#ffff00",
+                "value": "yellow",
+                "valueType": "str"
+            },
+            {
+                "color": "#008000",
+                "value": "green",
+                "valueType": "str"
+            },
+            {
+                "color": "#0000ff",
+                "value": "blue",
+                "valueType": "str"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": true,
+        "name": "LED Ενεργό Χρώμα",
+        "x": 1140,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "emojiHeatingFunc",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "Emoji Θέρμανσης",
+        "func": "msg.payload = msg.payload.heating === true ? \"Θέρμανση ON 🔥\" : \"Θέρμανση OFF ❄️\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 870,
+        "y": 320,
+        "wires": [
+            [
+                "heatingStatusTextEmoji"
+            ]
+        ]
+    },
+    {
+        "id": "heatingStatusTextEmoji",
+        "type": "ui_text",
+        "z": "f6f2187d.f17ca8",
+        "group": "cc66731f42ebb8df",
+        "order": 5,
+        "width": 6,
+        "height": 1,
+        "name": "Θέρμανση Emoji Text",
+        "label": "",
+        "format": "{{msg.payload}}",
+        "layout": "row-center",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 1080,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "emojiSmokeFunc",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "Emoji Καπνός",
+        "func": "msg.payload = msg.payload.smoke === true ? \"Ανιχνεύτηκε καπνός   🚨\" : \"Καθαρός αέρας   ✅ \";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 860,
+        "y": 280,
+        "wires": [
+            [
+                "smokeStatusTextEmoji"
+            ]
+        ]
+    },
+    {
+        "id": "smokeStatusTextEmoji",
+        "type": "ui_text",
+        "z": "f6f2187d.f17ca8",
+        "group": "cc66731f42ebb8df",
+        "order": 4,
+        "width": 6,
+        "height": 1,
+        "name": "Καπνός Emoji Text",
+        "label": "",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 1070,
+        "y": 280,
+        "wires": []
+    }
+]

@@ -1,0 +1,4 @@
+paho-mqtt
+gpiozero
+adafruit-circuitpython-dht
+adafruit-blinka
